@@ -28,7 +28,7 @@ $(function () {
 
     "use strict";
 
-    $('.header-layout1').load('header.html',function(){
+    $('.header-layout1').load('Zaven-website/header.html',function(){
         const url = window.location.href;
         let page = url.substring(
             url.lastIndexOf("/") + 1,
@@ -80,7 +80,7 @@ $(function () {
             scrollTop: $("#contact").offset().top
             }, 'slow');
     })
-    $('#footer').load('footer.html');
+    $('#footer').load('Zaven-website/footer.html');
     
         
 
