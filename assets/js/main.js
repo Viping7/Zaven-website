@@ -27,7 +27,21 @@
 $(function () {
 
     "use strict";
-
+    $.fn.serializeObject = function() {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function() {
+            if (o[this.name]) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            } else {
+                o[this.name] = this.value || '';
+            }
+        });
+        return o;
+    };
     $('.header-layout1').load('header.html',function(){
         const url = window.location.href;
         let page = url.substring(
@@ -245,11 +259,13 @@ $(function () {
     contactForm.validate({
         debug: false,
         submitHandler: function (contactForm) {
+            console.log($(contactForm).serializeObject())
             $(contactResult, contactForm).html('Please Wait...');
             $.ajax({
                 type: "POST",
-                url: "assets/php/contact.php",
-                data: $(contactForm).serialize(),
+                url: "https://r2zqlgst06.execute-api.eu-central-1.amazonaws.com/default/Emailer",
+                data: JSON.stringify($(contactForm).serializeObject()),
+                contentType: "application/json; charset=utf-8",
                 timeout: 20000,
                 success: function (msg) {
                     $(contactResult, contactForm).html('<div class="alert alert-success" role="alert"><strong>Thank you. We will contact you shortly.</strong></div>').delay(3000).fadeOut(2000);
