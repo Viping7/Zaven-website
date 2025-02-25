@@ -18,6 +18,7 @@
     "postcss-export-custom-variables": "^1.0.0"
   },
   "dependencies": {
+    "@babel/core": "^7.26.9",
     "node-sass": "^7.0.3",
     "postcss-export-vars": "^0.2.0",
     "sass": "^1.76.0"

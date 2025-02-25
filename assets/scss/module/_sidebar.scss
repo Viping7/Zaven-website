@@ -11,7 +11,7 @@
     overflow: hidden;
     border-radius: 10px;
     margin-bottom: 40px;
-    background-color: #def8f6;
+    background-color: #ffe6db;
 
     &:after {
         content: '';
@@ -123,7 +123,7 @@
         text-transform: capitalize;
         border-radius: 50px;
         font-family: $font-heading;
-        color: $color-secondary;
+        color: $color-primary;
         background-color: $color-white;
         @include prefix(transition, all 0.4s ease, webkit moz ms o);
 
