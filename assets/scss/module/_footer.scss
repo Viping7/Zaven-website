@@ -5,13 +5,14 @@
     .footer-primary {
         padding-top: 85px;
         padding-bottom: 60px;
-        background-color: #1d2a4d;
+        // background-color: #1d2a4d;
     }
 
     .footer-secondary {
         position: relative;
         padding: 46px 0;
         background-color: $color-white;
+        border-top: 2px solid #e6e8eb;
 
         &:after {
             content: '';
